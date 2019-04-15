@@ -35,7 +35,7 @@ Install thekla.
 npm install thekla --save
 ````
 
-## Create the test spec
+## Create the jasmine test spec
 
 Create the test folder ``test`` inside your projects folder.
 
