@@ -73,17 +73,17 @@ describe('Search on Google with thekla', function () {
         jonathan.can(BrowseTheWeb.using(aBrowser));
 
         // create the search field and give it a name. If
-        const googleSearchField = element(By.css(`[name='q']`))        // say how you want to locate the element
-            .called(`The Google search field`)                       // give the element a name (optional)
-            .shallWait(UntilElement.is.visible().forAsLongAs(1000));    // if its not there right away, wait for it (optional)
+        const googleSearchField = element(By.css(`[name='q']`))       // say how you want to locate the element
+            .called(`The Google search field`)                        // give the element a name (optional)
+            .shallWait(UntilElement.is.visible().forAsLongAs(1000));  // if its not there right away, wait for it (optional)
 
         await jonathan.attemptsTo(
-            Navigate.to("https://www.google.com/"),                         // Go to Google
+            Navigate.to("https://www.google.com/"),             // Go to Google
             Enter.value("software test automation")
-                .into(googleSearchField),                               // send the search text to the search field
-            Sleep.for(5 * 1000),                              // Wait for 5 Seconds (just to visually follow the test case)
+                .into(googleSearchField),                       // send the search text to the search field
+            Sleep.for(5 * 1000),                                // Wait for 5 Seconds (just to visually follow the test case)
             See.if(Value.of(googleSearchField))
-                .is(strictEqualTo("software test automation"))      // check if the text was entered
+                .is(strictEqualTo("software test automation"))  // check if the text was entered
         )
 
     });
